@@ -1,0 +1,4 @@
+<vlayout sclass="card">
+    <label value="${arg.title}"/>
+    <label value="${arg.value}"/>
+</vlayout>

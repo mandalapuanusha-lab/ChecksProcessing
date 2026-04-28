@@ -1,0 +1,8 @@
+iispl/com/service/CheckService.class
+iispl/com/service/BatchService.class
+iispl/com/model/Check.class
+iispl/com/controller/CheckEntryController.class
+iispl/com/util/DBConnection.class
+iispl/com/controller/BatchController.class
+iispl/com/controller/ValidationController.class
+iispl/com/model/Batch.class

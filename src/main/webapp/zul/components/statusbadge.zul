@@ -1,0 +1,1 @@
+<label sclass="status-${arg.status}" value="${arg.status}"/>

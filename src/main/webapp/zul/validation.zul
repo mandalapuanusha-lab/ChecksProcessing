@@ -1,0 +1,94 @@
+<window apply="iispl.com.controller.ValidationController"
+        width="100%" style="background:#f5f7fb;">
+
+    <vlayout style="padding:30px;">
+
+        <!-- HEADER -->
+        <hlayout>
+            <label value="Check Processing System"
+                   style="font-size:22px; font-weight:600;"/>
+        </hlayout>
+
+        <!-- STEPPER -->
+        <hlayout spacing="50px" style="margin-top:20px;">
+            <label value="1 Dashboard"/>
+            <label value="2 Validation" style="color:#2563eb; font-weight:600;"/>
+            <label value="3 Batch Creation"/>
+            <label value="4 NPCI Clearing"/>
+        </hlayout>
+
+        <!-- TITLE + BUTTONS -->
+        <hlayout hflex="1" style="margin-top:30px;">
+            <vlayout hflex="1">
+                <label value="Check Validation"
+                       style="font-size:20px; font-weight:600;"/>
+                <label value="Review and validate all check details"
+                       style="color:#6b7280;"/>
+            </vlayout>
+
+            <hbox spacing="10px" style="margin-left:auto;">
+                <button label="Back"
+                        onClick='Executions.sendRedirect("/zul/checkentry.zul")'
+                        style="background:#e5e7eb; border-radius:8px; padding:8px 16px;"/>
+
+                <button id="validateBtn" label="Run Validation"
+                        style="background:#16a34a; color:white; border-radius:8px; padding:8px 16px;"/>
+            </hbox>
+        </hlayout>
+
+        <!-- SUCCESS TOAST -->
+        <label id="successMsg" visible="false"
+               style="margin-top:15px; padding:10px; background:#dcfce7; color:#166534; border-radius:8px;"
+               value="✔ Validation completed"/>
+
+        <!-- CARDS -->
+        <hlayout spacing="20px" hflex="1" style="margin-top:20px;">
+
+            <vlayout hflex="1"
+                     style="background:#e7f0ff; padding:20px; border-radius:12px;">
+                <label value="Total Checks" style="color:#2563eb;"/>
+                <label id="totalLbl"
+                       style="font-size:24px; font-weight:bold;"/>
+            </vlayout>
+
+            <vlayout hflex="1"
+                     style="background:#e6f7ec; padding:20px; border-radius:12px;">
+                <label value="Valid Checks" style="color:#16a34a;"/>
+                <label id="validLbl"
+                       style="font-size:24px; font-weight:bold; color:#16a34a;"/>
+            </vlayout>
+
+            <vlayout hflex="1"
+                     style="background:#fde8e8; padding:20px; border-radius:12px;">
+                <label value="Invalid Checks" style="color:#dc2626;"/>
+                <label id="invalidLbl"
+                       style="font-size:24px; font-weight:bold; color:#dc2626;"/>
+            </vlayout>
+
+        </hlayout>
+
+        <!-- TABLE CARD -->
+        <groupbox style="margin-top:25px; padding:0; border-radius:12px; background:white; overflow:hidden;">
+
+            <!-- TABLE -->
+            <listbox id="validationList" hflex="1" style="border:none;">
+                <listhead style="background:#1e88e5; color:white;">
+                    <listheader label="Check No"/>
+                    <listheader label="Account No"/>
+                    <listheader label="Amount"/>
+                    <listheader label="Status"/>
+                    <listheader label="Validation Details"/>
+                </listhead>
+            </listbox>
+
+            <!-- BUTTON -->
+            <hbox pack="start" style="padding:15px;">
+                <button label="Proceed to Batch"
+                        onClick='Executions.sendRedirect("/zul/batchcreations.zul")'
+                        style="background:#2563eb; color:white; border-radius:8px; padding:8px 18px;"/>
+            </hbox>
+
+        </groupbox>
+
+    </vlayout>
+</window>

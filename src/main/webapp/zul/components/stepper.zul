@@ -1,0 +1,6 @@
+<hlayout spacing="40px" style="margin-bottom:10px;">
+    <label value="1 Dashboard"/>
+    <label value="2 Validation"/>
+    <label value="3 Batch Creation"/>
+    <label value="4 NPCI Clearing"/>
+</hlayout>

@@ -1,0 +1,18 @@
+<window title="Batch Creation"
+        apply="iispl.com.controller.BatchController">
+
+    <include src="/zul/components/stepper.zul"/>
+
+    <button id="createBtn" label="Create Batch" onClick="@command('createBatch')"/>
+    
+
+    
+    <listbox id="batchList" multiple="true" checkmark="true" width="100%">
+        <listhead>
+            <listheader label="Check No"/>
+            <listheader label="Amount"/>
+            <listheader label="Status"/>
+        </listhead>
+    </listbox>
+
+</window>

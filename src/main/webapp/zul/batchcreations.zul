@@ -1,0 +1,117 @@
+<window apply="iispl.com.controller.BatchController" width="100%">
+
+    <vlayout style="padding:24px; background:#f5f7fb; font-family:Inter;">
+
+        <!-- STEPPER -->
+        <include src="/zul/components/stepper.zul"/>
+
+        <!-- CARD -->
+        <vlayout style="margin-top:20px; background:white; border-radius:12px; padding:24px; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+
+            <!-- HEADER -->
+            <hbox>
+                <vlayout>
+                    <label value="Batch Creation" style="font-size:22px; font-weight:600;"/>
+                    <label value="Select and approve valid checks for batch processing"
+                           style="color:#6b7280; font-size:14px;"/>
+                </vlayout>
+
+                <div hflex="1"/>
+
+                <button label="← Back"
+                        onClick='Executions.sendRedirect("/zul/validation.zul")'
+                        style="background:#e5e7eb; border-radius:8px;"/>
+            </hbox>
+
+            <!-- SUCCESS BOX -->
+            <hlayout id="successBox" visible="false"
+                     style="margin-top:20px; background:#ecfdf5; border:1px solid #bbf7d0; padding:20px; border-radius:12px;">
+
+                <vlayout>
+                    <label value="✔ Batch Created Successfully"
+                           style="color:#16a34a; font-weight:600; font-size:16px;"/>
+
+                    <hbox spacing="40px" style="margin-top:10px;">
+                        <vlayout>
+                            <label value="Batch Number" style="color:#6b7280;"/>
+                            <label id="batchNoLbl" style="font-weight:600;"/>
+                        </vlayout>
+
+                        <vlayout>
+                            <label value="Total Checks" style="color:#6b7280;"/>
+                            <label id="totalChecksLbl" style="font-weight:600;"/>
+                        </vlayout>
+
+                        <vlayout>
+                            <label value="Total Amount" style="color:#6b7280;"/>
+                            <label id="totalAmtLbl" style="font-weight:600;"/>
+                        </vlayout>
+                    </hbox>
+                </vlayout>
+
+                <div hflex="1"/>
+
+                <button label="Submit to NPCI Clearing →"
+                        style="background:#2563eb; color:white; border-radius:8px; height:40px;"/>
+            </hlayout>
+
+            <!-- STATS -->
+            <hlayout spacing="20px" style="margin-top:20px;">
+
+                <vlayout style="background:#e0ecff; padding:16px; border-radius:10px; width:220px;">
+                    <label value="Valid Checks" style="color:#2563eb;"/>
+                    <label id="validCount" style="font-size:22px; font-weight:600;"/>
+                </vlayout>
+
+                <vlayout style="background:#f3e8ff; padding:16px; border-radius:10px; width:220px;">
+                    <label value="Selected" style="color:#9333ea;"/>
+                    <label id="selectedCount" style="font-size:22px; font-weight:600;"/>
+                </vlayout>
+
+                <vlayout style="background:#dcfce7; padding:16px; border-radius:10px; width:220px;">
+                    <label value="Approved" style="color:#16a34a;"/>
+                    <label id="approvedCount" style="font-size:22px; font-weight:600;"/>
+                </vlayout>
+
+                <vlayout style="background:#fff7ed; padding:16px; border-radius:10px; width:220px;">
+                    <label value="Batch Amount" style="color:#ea580c;"/>
+                    <label id="batchAmount" style="font-size:22px; font-weight:600;"/>
+                </vlayout>
+
+            </hlayout>
+
+            <!-- BUTTONS -->
+            <hbox spacing="12px" style="margin-top:20px;">
+
+                <button label="Select All Valid"
+                        id="selectAllBtn"
+                        style="background:#e5e7eb; border-radius:8px;"/>
+
+                <button label="✔ Validate  Approve Selected"
+                        id="approveBtn"
+                        style="background:#16a34a; color:white; border-radius:8px;"/>
+
+                <button label="📦 Create Batch"
+                        id="createBatchBtn"
+                        style="background:#2563eb; color:white; border-radius:8px;"/>
+            </hbox>
+
+            <!-- TABLE -->
+            <listbox id="batchList" checkmark="true" multiple="true"
+                     style="margin-top:20px; border:none;">
+
+                <listhead style="background:#f9fafb;">
+                    <listheader label=""/>
+                    <listheader label="Check No"/>
+                    <listheader label="Account No"/>
+                    <listheader label="Amount"/>
+                    <listheader label="Bank"/>
+                    <listheader label="Status"/>
+                </listhead>
+
+            </listbox>
+
+        </vlayout>
+
+    </vlayout>
+</window>

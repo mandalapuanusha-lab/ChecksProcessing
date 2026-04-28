@@ -1,0 +1,20 @@
+<window title="Validation" apply="iispl.com.controller.ValidationController">
+
+    <include src="/zul/components/stepper.zul"/>
+
+    <hlayout>
+        <include src="/zul/components/summary_card.zul"/>
+    </hlayout>
+
+    <button id="validateBtn" label="Run Validation" onClick="@command('validate')"/>
+  
+
+    <listbox id="validationList">
+        <listhead>
+            <listheader label="Check No"/>
+            <listheader label="Status"/>
+            <listheader label="Details"/>
+        </listhead>
+    </listbox>
+
+</window>

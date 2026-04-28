@@ -1,0 +1,22 @@
+<window title="Check Processing System" border="normal" width="400px">
+
+    <vlayout spacing="15px" style="padding:20px;">
+
+        <label value="Check Processing System"
+               style="font-size:20px; font-weight:bold"/>
+
+        <button label="Check Entry"
+    onClick='Executions.sendRedirect("/zul/checkentry.zul");'/>
+
+      <button label="Proceed to Batch"
+        onClick='Executions.sendRedirect("/zul/batchcreations.zul")'
+        style="background:#2563eb; color:white;"/>
+    
+    
+    
+        <button label="Batch Creation"
+                onClick="Executions.sendRedirect('/zul/batchcreations.zul')"/>
+
+    </vlayout>
+
+</window>

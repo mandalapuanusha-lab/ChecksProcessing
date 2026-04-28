@@ -1,0 +1,31 @@
+<window title="Check Entry" border="normal"
+        apply="iispl.com.controller.CheckEntryController">
+       
+
+    <include src="/zul/components/stepper.zul"/>
+    
+
+    <vlayout spacing="10px">
+        <textbox id="checkNo" placeholder="Check No"/>
+        <textbox id="accountNo" placeholder="Account No"/>
+        <doublebox id="amount" placeholder="Amount"/>
+        <textbox id="ifsc" placeholder="IFSC"/>
+        <textbox id="micr" placeholder="MICR"/>
+        <textbox id="amountInWords" placeholder="Amount in words"/>
+        <textbox id="bankName" placeholder="Bank"/>
+        <textbox id="branchName" placeholder="Branch"/>
+
+        <button label="Add Check" onClick="@command('addCheck')"/>
+    </vlayout>
+
+
+    <listbox id="checkList" width="100%">
+        <listhead>
+            <listheader label="Check No"/>
+            <listheader label="Account"/>
+            <listheader label="Amount"/>
+            <listheader label="Status"/>
+        </listhead>
+    </listbox>
+
+</window>
