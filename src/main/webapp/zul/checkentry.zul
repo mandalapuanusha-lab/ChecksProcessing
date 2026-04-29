@@ -1,124 +1,136 @@
-<window apply="iispl.com.controller.CheckEntryController" width="100%">
+<?component name="stepper"
+            macroURI="/zul/components/stepper.zul"
+            class="iispl.com.component.Stepper"?>
+<?component name="datatable"
+            macroURI="/zul/components/datatable.zul"
+            class="iispl.com.component.DataTable"?>
 
-    <vlayout style="padding:30px; background:#f5f7fb;">
+<window apply="iispl.com.controller.CheckEntryController" width="100%"
+        style="background:#f8fafc; min-height:100vh; margin:0;">
 
-        <!-- Stepper -->
-        <include src="/zul/components/stepper.zul"/>
+    <!-- NAVBAR -->
+    <div style="background:white;border-bottom:1px solid #e5e7eb;padding:0 32px;
+                height:56px;display:flex;align-items:center;
+                position:sticky;top:0;z-index:100;">
+        <label value="✓" style="font-size:18px;font-weight:900;color:#2563eb;margin-right:8px;"/>
+        <label value="Check Processing System"
+               style="font-size:17px;font-weight:700;color:#1e293b;"/>
+    </div>
 
-        <!-- CARD -->
-        <vlayout style="margin-top:20px; background:white; border-radius:10px; padding:25px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+    <vlayout style="padding:32px; max-width:1100px; margin:0 auto;">
+
+        <!-- STEPPER -->
+        <stepper activeStep="1"/>
+
+        <!-- FORM CARD -->
+        <vlayout style="background:white;border-radius:12px;padding:28px;
+                        box-shadow:0 1px 4px rgba(0,0,0,0.07);
+                        border:1px solid #f1f5f9;margin-top:8px;">
 
             <label value="Enter Check Details"
-                   style="font-size:20px; font-weight:bold; margin-bottom:15px;"/>
+                   style="font-size:20px;font-weight:700;color:#1e293b;margin-bottom:20px;"/>
 
-            <!-- FORM GRID -->
             <grid width="100%">
                 <columns>
                     <column width="50%"/>
                     <column width="50%"/>
                 </columns>
-
                 <rows>
-
-                    <!-- Check No + Date -->
                     <row>
-                        <vlayout>
-                            <label value="Check Number *"/>
-                            <textbox id="checkNo" placeholder="Enter check number" width="95%"/>
+                        <vlayout style="padding-right:16px;margin-bottom:16px;">
+                            <label value="Check Number *"
+                                   style="font-size:13px;font-weight:600;color:#374151;margin-bottom:6px;"/>
+                            <textbox id="checkNo" placeholder="Enter check number" width="100%"
+                                     style="padding:10px 14px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:14px;"/>
                         </vlayout>
-
-                        <vlayout>
-                            <label value="Date *"/>
-                            <datebox id="date" width="95%"/>
+                        <vlayout style="padding-left:16px;margin-bottom:16px;">
+                            <label value="Date *"
+                                   style="font-size:13px;font-weight:600;color:#374151;margin-bottom:6px;"/>
+                            <datebox id="date" width="100%"
+                                     style="padding:10px 14px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:14px;"/>
                         </vlayout>
                     </row>
-
-                    <!-- Account -->
                     <row>
-                        <vlayout>
-                            <label value="Account Number *"/>
-                            <textbox id="accountNo" placeholder="Enter account number" width="95%"/>
+                        <vlayout style="padding-right:16px;margin-bottom:16px;">
+                            <label value="Account Number *"
+                                   style="font-size:13px;font-weight:600;color:#374151;margin-bottom:6px;"/>
+                            <textbox id="accountNo" placeholder="Enter account number" width="100%"
+                                     style="padding:10px 14px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:14px;"/>
                         </vlayout>
-
-                        <vlayout>
-                            <label value="Account Name"/>
-                            <textbox id="accountName" placeholder="Enter account holder name" width="95%"/>
+                        <vlayout style="padding-left:16px;margin-bottom:16px;">
+                            <label value="Account Name"
+                                   style="font-size:13px;font-weight:600;color:#374151;margin-bottom:6px;"/>
+                            <textbox id="accountName" placeholder="Enter account holder name" width="100%"
+                                     style="padding:10px 14px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:14px;"/>
                         </vlayout>
                     </row>
-
-                    <!-- Amount -->
                     <row>
-                        <vlayout>
-                            <label value="Amount *"/>
-                            <doublebox id="amount" placeholder="Enter amount" width="95%"/>
+                        <vlayout style="padding-right:16px;margin-bottom:16px;">
+                            <label value="Amount *"
+                                   style="font-size:13px;font-weight:600;color:#374151;margin-bottom:6px;"/>
+                            <doublebox id="amount" placeholder="Enter amount" width="100%"
+                                       style="padding:10px 14px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:14px;"/>
                         </vlayout>
-
-                        <vlayout>
-                            <label value="Amount in Words *"/>
-                            <textbox id="amountInWords" placeholder="Enter amount in words" width="95%"/>
+                        <vlayout style="padding-left:16px;margin-bottom:16px;">
+                            <label value="Amount in Words *"
+                                   style="font-size:13px;font-weight:600;color:#374151;margin-bottom:6px;"/>
+                            <textbox id="amountInWords" placeholder="Enter amount in words" width="100%"
+                                     style="padding:10px 14px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:14px;"/>
                         </vlayout>
                     </row>
-
-                    <!-- IFSC + MICR -->
                     <row>
-                        <vlayout>
-                            <label value="IFSC Code *"/>
-                            <textbox id="ifsc" placeholder="Enter IFSC code" width="95%"/>
+                        <vlayout style="padding-right:16px;margin-bottom:16px;">
+                            <label value="IFSC Code *"
+                                   style="font-size:13px;font-weight:600;color:#374151;margin-bottom:6px;"/>
+                            <textbox id="ifsc" placeholder="Enter IFSC code" width="100%"
+                                     style="padding:10px 14px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:14px;"/>
                         </vlayout>
-
-                        <vlayout>
-                            <label value="MICR Code *"/>
-                            <textbox id="micr" placeholder="Enter MICR code" width="95%"/>
+                        <vlayout style="padding-left:16px;margin-bottom:16px;">
+                            <label value="MICR Code *"
+                                   style="font-size:13px;font-weight:600;color:#374151;margin-bottom:6px;"/>
+                            <textbox id="micr" placeholder="Enter MICR code" width="100%"
+                                     style="padding:10px 14px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:14px;"/>
                         </vlayout>
                     </row>
-
-                    <!-- Bank -->
                     <row>
-                        <vlayout>
-                            <label value="Bank Name"/>
-                            <textbox id="bankName" placeholder="Enter bank name" width="95%"/>
+                        <vlayout style="padding-right:16px;margin-bottom:16px;">
+                            <label value="Bank Name"
+                                   style="font-size:13px;font-weight:600;color:#374151;margin-bottom:6px;"/>
+                            <textbox id="bankName" placeholder="Enter bank name" width="100%"
+                                     style="padding:10px 14px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:14px;"/>
                         </vlayout>
-
-                        <vlayout>
-                            <label value="Branch Name"/>
-                            <textbox id="branchName" placeholder="Enter branch name" width="95%"/>
+                        <vlayout style="padding-left:16px;margin-bottom:16px;">
+                            <label value="Branch Name"
+                                   style="font-size:13px;font-weight:600;color:#374151;margin-bottom:6px;"/>
+                            <textbox id="branchName" placeholder="Enter branch name" width="100%"
+                                     style="padding:10px 14px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:14px;"/>
                         </vlayout>
                     </row>
-
                 </rows>
             </grid>
 
-            <!-- BUTTON -->
-            <hbox pack="end" style="margin-top:20px;">
+            <hbox pack="end" style="margin-top:8px;">
                 <button id="addBtn" label="+ Add Check"
-                        style="background:#2563eb; color:white; border-radius:6px; padding:8px 18px;"/>
+                        style="background:#2563eb;color:white;border:none;border-radius:8px;
+                               padding:10px 20px;font-size:14px;font-weight:600;cursor:pointer;"/>
             </hbox>
-
         </vlayout>
 
-        <!-- TABLE CARD -->
-        <vlayout style="margin-top:20px; background:white; border-radius:10px; padding:20px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+        <!-- REUSABLE DATATABLE -->
+        <vlayout style="margin-top:20px;">
+            <datatable id="checkTable"
+                       columns="CHECK NO.,ACCOUNT NO.,AMOUNT,BANK,IFSC,STATUS"
+                       caption="Checks Added (0)"
+                       emptyMessage="No checks added yet. Fill the form above and click + Add Check."
+                       showSearch="true"
+                       checkmark="false"/>
 
-            <label value="Checks Added"
-                   style="font-size:18px; font-weight:bold; margin-bottom:10px;"/>
-
-            <listbox id="checkList" width="100%">
-                <listhead>
-                    <listheader label="Check No"/>
-                    <listheader label="Account No"/>
-                    <listheader label="Amount"/>
-                    <listheader label="Bank"/>
-                    <listheader label="IFSC"/>
-                    <listheader label="Status"/>
-                </listhead>
-            </listbox>
-
-            <hbox pack="end" style="margin-top:15px;">
+            <hbox pack="end" style="margin-top:16px;">
                 <button label="Proceed to Validation →"
                         onClick='Executions.sendRedirect("/zul/validation.zul")'
-                        style="background:#2563eb; color:white; border-radius:6px; padding:8px 18px;"/>
+                        style="background:#2563eb;color:white;border:none;border-radius:8px;
+                               padding:10px 20px;font-size:14px;font-weight:600;cursor:pointer;"/>
             </hbox>
-
         </vlayout>
 
     </vlayout>

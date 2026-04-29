@@ -1,0 +1,208 @@
+/* ============================================================
+   styles.css — Check Processing System
+   ============================================================ */
+
+* { box-sizing: border-box; }
+
+body, .z-window, .z-vlayout, .z-hlayout {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* ── GLOBAL PAGE ── */
+.page-root {
+    background: #f8fafc;
+    min-height: 100vh;
+}
+
+/* ── TOP NAVBAR ── */
+.navbar {
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0 32px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-brand {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.navbar-icon {
+    color: #2563eb;
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+/* ── CONTENT AREA ── */
+.content-area {
+    padding: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ── CARD ── */
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    border: 1px solid #f1f5f9;
+    margin-top: 24px;
+}
+
+/* ── STAT CARDS ── */
+.stat-card {
+    border-radius: 10px;
+    padding: 20px 24px;
+    min-width: 200px;
+    flex: 1;
+}
+
+.stat-label {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* ── BUTTONS ── */
+.btn {
+    border-radius: 8px;
+    padding: 9px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary { background:#2563eb; color:white; }
+.btn-success { background:#16a34a; color:white; }
+.btn-neutral { background:#f1f5f9; color:#374151; border: 1px solid #e5e7eb; }
+.btn-danger  { background:#dc2626; color:white; }
+
+/* ── STATUS BADGES ── */
+.badge {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.badge-valid, .badge-passed    { background:#dcfce7; color:#16a34a; }
+.badge-invalid, .badge-failed  { background:#fee2e2; color:#dc2626; }
+.badge-pending                 { background:#f1f5f9; color:#64748b; }
+.badge-approved                { background:#dbeafe; color:#2563eb; }
+.badge-batched                 { background:#e0e7ff; color:#4338ca; }
+
+/* ── TABLE ── */
+.z-listbox { border: none !important; }
+.z-listhead-bar { background: transparent !important; }
+.z-listheader {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #64748b;
+    background: #f8fafc !important;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 10px 16px;
+}
+.z-listitem { border-bottom: 1px solid #f1f5f9; }
+.z-listitem:hover { background: #f8fafc; }
+.z-listcell { padding: 12px 16px; font-size: 14px; color: #1e293b; }
+
+/* ── SUCCESS BOX ── */
+.success-box {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-top: 20px;
+}
+
+/* ── LOGIN PAGE ── */
+.login-root {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    width: 420px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+
+.login-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.login-subtitle {
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+.login-field label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.login-input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #1e293b;
+    transition: border 0.2s;
+}
+
+.login-input:focus { border-color: #2563eb; outline: none; }
+
+.login-btn {
+    width: 100%;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.login-error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+}
+
+/* ── NPCI STATUS ── */
+.npci-pass { background:#dcfce7; color:#16a34a; padding:3px 12px; border-radius:999px; font-size:13px; font-weight:600; }
+.npci-fail { background:#fee2e2; color:#dc2626; padding:3px 12px; border-radius:999px; font-size:13px; font-weight:600; }
+.npci-pend { background:#f1f5f9; color:#64748b; padding:3px 12px; border-radius:999px; font-size:13px; font-weight:600; }

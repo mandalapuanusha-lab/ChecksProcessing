@@ -1,0 +1,97 @@
+<?component name="stepper"
+            macroURI="/zul/components/stepper.zul"
+            class="iispl.com.component.Stepper"?>
+<?component name="summarycard"
+            macroURI="/zul/components/summarycard.zul"
+            class="iispl.com.component.SummaryCard"?>
+<?component name="datatable"
+            macroURI="/zul/components/datatable.zul"
+            class="iispl.com.component.DataTable"?>
+
+<window apply="iispl.com.controller.NpciController" width="100%"
+        style="background:#f8fafc; min-height:100vh; margin:0;">
+
+    <!-- NAVBAR -->
+    <div style="background:white;border-bottom:1px solid #e5e7eb;padding:0 32px;
+                height:56px;display:flex;align-items:center;
+                position:sticky;top:0;z-index:100;">
+        <label value="✓" style="font-size:18px;font-weight:900;color:#2563eb;margin-right:8px;"/>
+        <label value="Check Processing System"
+               style="font-size:17px;font-weight:700;color:#1e293b;"/>
+    </div>
+
+    <vlayout style="padding:32px; max-width:1100px; margin:0 auto;">
+
+        <!-- STEPPER -->
+        <stepper activeStep="4"/>
+
+        <!-- CARD -->
+        <vlayout style="background:white;border-radius:12px;padding:28px;
+                        box-shadow:0 1px 4px rgba(0,0,0,0.07);
+                        border:1px solid #f1f5f9;margin-top:8px;">
+
+            <!-- HEADER -->
+            <hbox style="align-items:flex-start; margin-bottom:24px;">
+                <vlayout hflex="1">
+                    <label value="NPCI Clearing House"
+                           style="font-size:20px;font-weight:700;color:#1e293b;"/>
+                    <label value="Final validation and submission to NPCI"
+                           style="font-size:13px;color:#64748b;margin-top:4px;"/>
+                </vlayout>
+                <button label="← Back"
+                        onClick='Executions.sendRedirect("/zul/batchcreations.zul")'
+                        style="background:#f1f5f9;color:#374151;border:1px solid #e5e7eb;
+                               border-radius:8px;padding:9px 16px;font-size:14px;
+                               font-weight:500;cursor:pointer;margin-left:auto;"/>
+            </hbox>
+
+            <!-- SUCCESS BOX -->
+            <vlayout id="npciSuccessBox" visible="false"
+                     style="background:#f0fdf4;border-radius:12px;padding:40px;
+                            text-align:center;margin-bottom:20px;">
+                <label value="✓"
+                       style="font-size:48px;color:#16a34a;font-weight:900;"/>
+                <label value="Successfully Submitted to NPCI"
+                       style="font-size:20px;font-weight:700;color:#1e293b;margin-top:12px;"/>
+                <label id="npciSuccessDetail" value=""
+                       style="font-size:14px;color:#16a34a;margin-top:6px;"/>
+                <button label="Start New Batch"
+                        onClick='Executions.sendRedirect("/zul/checkentry.zul")'
+                        style="background:#16a34a;color:white;border:none;border-radius:8px;
+                               padding:12px 28px;font-size:15px;font-weight:600;
+                               cursor:pointer;margin-top:20px;"/>
+            </vlayout>
+
+            <!-- STAT CARDS -->
+            <hlayout id="statRow" spacing="16px" style="margin-bottom:20px;">
+                <summarycard id="npciTotalCard" cardTitle="Total Checks" cardValue="0"
+                             cardColor="#e7f0ff" labelColor="#2563eb"/>
+                <summarycard id="npciPassCard"  cardTitle="Passed"       cardValue="0"
+                             cardColor="#e6f7ec" labelColor="#16a34a"/>
+                <summarycard id="npciFailCard"  cardTitle="Failed"       cardValue="0"
+                             cardColor="#fde8e8" labelColor="#dc2626"/>
+                <summarycard id="npciAmtCard"   cardTitle="Clear Amount" cardValue="₹0"
+                             cardColor="#f3e8ff" labelColor="#9333ea"/>
+            </hlayout>
+
+            <!-- BUTTONS -->
+            <hbox id="actionRow" spacing="12px" style="margin-bottom:20px;">
+                <button id="runNpciBtn" label="⚡ Run NPCI Validation"
+                        style="background:#e0ecff;color:#2563eb;border:none;border-radius:8px;
+                               padding:9px 18px;font-size:14px;font-weight:600;cursor:pointer;"/>
+                <button id="submitNpciBtn" label="✈ Submit to NPCI"
+                        style="background:#16a34a;color:white;border:none;border-radius:8px;
+                               padding:9px 18px;font-size:14px;font-weight:600;cursor:pointer;"/>
+            </hbox>
+
+            <!-- REUSABLE DATATABLE -->
+            <datatable id="npciTable"
+                       columns="CHECK NO.,ACCOUNT NO.,AMOUNT,BANK,NPCI STATUS,ISSUES"
+                       caption="Checks for NPCI Submission"
+                       emptyMessage="No approved checks found. Please complete Batch Creation first."
+                       showSearch="true"
+                       checkmark="false"/>
+
+        </vlayout>
+    </vlayout>
+</window>

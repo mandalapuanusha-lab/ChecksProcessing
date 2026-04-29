@@ -1,0 +1,57 @@
+<!-- 
+    DataTable — Reusable ZK table macro component
+    
+    Properties (set from ZUL or Java):
+      columns       comma-separated column headers  e.g. "CHECK NO.,ACCOUNT NO.,AMOUNT"
+      emptyMessage  text shown when no rows exist   e.g. "No records found"
+      checkmark     "true" to show ZK checkbox column (for multi-select)
+      showSearch    "true" to show a search/filter textbox above the table
+      caption       optional heading text above the table
+      
+    The Listbox (id="mc_tableList") is exposed so controllers can 
+    call DataTable.getTableList() to add/remove Listitems.
+-->
+<zk>
+    <vlayout id="mc_tableContainer"
+             style="border:1px solid #e5e7eb; border-radius:10px; overflow:hidden; background:white;">
+
+        <!-- ── CAPTION + SEARCH ROW ── -->
+        <hbox id="mc_topBar"
+              style="padding:12px 16px; border-bottom:1px solid #f1f5f9; align-items:center; background:#fafafa;">
+            <label id="mc_caption"
+                   style="font-size:14px; font-weight:700; color:#1e293b; flex:1;"/>
+            <textbox id="mc_searchBox"
+                     placeholder="Search..."
+                     style="border:1.5px solid #e5e7eb; border-radius:6px; padding:6px 12px;
+                            font-size:13px; width:200px;"
+                     visible="false"/>
+        </hbox>
+
+        <!-- ── LISTBOX ── -->
+        <listbox id="mc_tableList"
+                 width="100%"
+                 style="border:none; border-radius:0; overflow:auto; max-height:480px;">
+            <!-- listhead is built dynamically by DataTable.java afterCompose() -->
+        </listbox>
+
+        <!-- ── EMPTY STATE ── -->
+        <vlayout id="mc_emptyState"
+                 style="display:flex; flex-direction:column; align-items:center;
+                        justify-content:center; padding:48px 0; background:white;"
+                 visible="false">
+            <label value="📋"   style="font-size:36px;"/>
+            <label id="mc_emptyMsg"
+                   value="No records found"
+                   style="font-size:14px; color:#94a3b8; margin-top:8px;"/>
+        </vlayout>
+
+        <!-- ── FOOTER ROW COUNT ── -->
+        <div id="mc_footer"
+             style="padding:8px 16px; background:#f8fafc; border-top:1px solid #f1f5f9;">
+            <label id="mc_rowCount"
+                   value="0 records"
+                   style="font-size:12px; color:#94a3b8;"/>
+        </div>
+
+    </vlayout>
+</zk>

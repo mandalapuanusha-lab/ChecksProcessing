@@ -1,6 +1,34 @@
-<hlayout spacing="40px" style="margin-bottom:10px;">
-    <label value="1 Dashboard"/>
-    <label value="2 Validation"/>
-    <label value="3 Batch Creation"/>
-    <label value="4 NPCI Clearing"/>
-</hlayout>
+<zk>
+    <style>
+        .stepper-wrap { display:flex; align-items:center; gap:0; margin-bottom:24px; }
+        .step-circle { width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:15px; flex-shrink:0; }
+        .step-circle-active { background:#2563eb; color:white; }
+        .step-circle-inactive { background:#e5e7eb; color:#9ca3af; }
+        .step-label { font-size:13px; margin-top:4px; text-align:center; }
+        .step-label-active { color:#2563eb; font-weight:600; }
+        .step-label-inactive { color:#9ca3af; }
+        .step-line { flex:1; height:2px; background:#e5e7eb; margin:0 4px; margin-bottom:18px; }
+        .step-line-active { background:#2563eb; }
+    </style>
+    <hlayout style="align-items:flex-start; margin-bottom:24px;">
+        <vlayout style="align-items:center; display:flex; flex-direction:column; align-items:center;">
+            <div id="mc_circle1" style="width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;background:#2563eb;color:white;">1</div>
+            <label id="mc_step1" value="Dashboard" style="font-size:13px;color:#2563eb;font-weight:600;margin-top:4px;"/>
+        </vlayout>
+        <div id="mc_line1" style="flex:1;height:2px;background:#e5e7eb;margin:18px 6px 0;min-width:40px;"/>
+        <vlayout style="align-items:center; display:flex; flex-direction:column; align-items:center;">
+            <div id="mc_circle2" style="width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;background:#e5e7eb;color:#9ca3af;">2</div>
+            <label id="mc_step2" value="Validation" style="font-size:13px;color:#9ca3af;margin-top:4px;"/>
+        </vlayout>
+        <div id="mc_line2" style="flex:1;height:2px;background:#e5e7eb;margin:18px 6px 0;min-width:40px;"/>
+        <vlayout style="align-items:center; display:flex; flex-direction:column; align-items:center;">
+            <div id="mc_circle3" style="width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;background:#e5e7eb;color:#9ca3af;">3</div>
+            <label id="mc_step3" value="Batch Creation" style="font-size:13px;color:#9ca3af;margin-top:4px;"/>
+        </vlayout>
+        <div id="mc_line3" style="flex:1;height:2px;background:#e5e7eb;margin:18px 6px 0;min-width:40px;"/>
+        <vlayout style="align-items:center; display:flex; flex-direction:column; align-items:center;">
+            <div id="mc_circle4" style="width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;background:#e5e7eb;color:#9ca3af;">4</div>
+            <label id="mc_step4" value="NPCI Clearing" style="font-size:13px;color:#9ca3af;margin-top:4px;"/>
+        </vlayout>
+    </hlayout>
+</zk>

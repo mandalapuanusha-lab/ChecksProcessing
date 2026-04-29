@@ -1,1 +1,3 @@
-<label sclass="status-${arg.status}" value="${arg.status}"/>
+<zk>
+    <label id="mc_statusLabel"/>
+</zk>

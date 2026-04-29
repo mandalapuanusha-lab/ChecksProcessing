@@ -11,16 +11,34 @@ public class Check {
     private String ifsc ;
     private String micr;
     private String branchName;
+    private String batchId;
 
-    // status fields
+    public String getBatchId() {
+		return batchId;
+	}
+
+	public void setBatchId(String batchId) {
+		this.batchId = batchId;
+	}
+
+	// status fields
     private String status;          // pending / valid / invalid / approved
     private String validationMsg;  // error or success message
+    private java.util.Date date;
 
     // -----------------------
     // GETTERS & SETTERS
     // -----------------------
 
-    public int getId() {
+    public java.util.Date getDate() {
+		return date;
+	}
+
+	public void setDate(java.util.Date date) {
+		this.date = date;
+	}
+
+	public int getId() {
         return id;
     }
 

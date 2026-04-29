@@ -1,6 +1,6 @@
-<groupbox width="200px" style="padding:10px;">
-    <vlayout>
-        <label value="Title"/>
-        <label value="0" style="font-size:18px; font-weight:bold;"/>
+<zk>
+    <vlayout id="mc_cardContainer" style="padding:20px 24px; border-radius:10px; min-width:180px; flex:1;">
+        <label id="mc_cardTitle" style="font-size:13px; font-weight:500; margin-bottom:8px;"/>
+        <label id="mc_cardValue" style="font-size:28px; font-weight:700;"/>
     </vlayout>
-</groupbox>
+</zk>

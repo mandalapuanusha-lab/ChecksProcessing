@@ -6,9 +6,9 @@ public class DBConnection {
     public static Connection getConnection() throws Exception {
         Class.forName("org.postgresql.Driver");
         return DriverManager.getConnection(
-            "jdbc:postgresql://localhost:5432/checkdb",
+            "jdbc:postgresql://localhost:5432/chequedb",
             "postgres",
-            "Imageinfo@123"
+            "newpassword"
         );
     }
 }

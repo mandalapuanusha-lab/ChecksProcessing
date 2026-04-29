@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk>
+    <language-addon>
+        <addon-name>checks-components</addon-name>
+        <language-name>xul/html</language-name>
+
+        <component>
+            <component-name>summarycard</component-name>
+            <macro-uri>/zul/components/summarycard.zul</macro-uri>
+            <implement-class>iispl.com.component.SummaryCard</implement-class>
+        </component>
+
+        <component>
+            <component-name>stepper</component-name>
+            <macro-uri>/zul/components/stepper.zul</macro-uri>
+            <implement-class>iispl.com.component.Stepper</implement-class>
+        </component>
+
+        <component>
+            <component-name>statusbadge</component-name>
+            <macro-uri>/zul/components/statusbadge.zul</macro-uri>
+            <implement-class>iispl.com.component.StatusBadge</implement-class>
+        </component>
+
+    </language-addon>
+</zk>
