@@ -1,6 +1,0 @@
-<groupbox width="200px" style="padding:10px;">
-    <vlayout>
-        <label value="Title"/>
-        <label value="0" style="font-size:18px; font-weight:bold;"/>
-    </vlayout>
-</groupbox>
